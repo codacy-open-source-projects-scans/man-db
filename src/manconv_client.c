@@ -24,8 +24,8 @@
 #  include "config.h"
 #endif /* HAVE_CONFIG_H */
 
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 
 #include "gl_array_list.h"
@@ -88,8 +88,8 @@ static void free_manconv_codes (void *data)
 	free (codes);
 }
 
-void add_manconv (pipeline *p,
-		  const char *source_encoding, const char *target_encoding)
+void add_manconv (pipeline *p, const char *source_encoding,
+                  const char *target_encoding)
 {
 	struct manconv_codes *codes;
 	char *name;
@@ -104,17 +104,17 @@ void add_manconv (pipeline *p,
 	codes->from = new_string_list (GL_ARRAY_LIST, true);
 	if (STREQ (source_encoding, "UTF-8")) {
 		gl_list_add_last (codes->from, xstrdup (source_encoding));
-		name = appendstr (name, source_encoding, (void *) 0);
+		name = appendstr (name, source_encoding, nullptr);
 	} else {
 		gl_list_add_last (codes->from, xstrdup ("UTF-8"));
 		gl_list_add_last (codes->from, xstrdup (source_encoding));
-		name = appendstr (name, "UTF-8:", source_encoding, (void *) 0);
+		name = appendstr (name, "UTF-8:", source_encoding, nullptr);
 	}
 	codes->to = xasprintf ("%s//IGNORE", target_encoding);
 	/* informational only; no shell quoting concerns */
-	name = appendstr (name, " -t ", codes->to, (void *) 0);
+	name = appendstr (name, " -t ", codes->to, nullptr);
 	if (quiet >= 2)
-		name = appendstr (name, " -q", (void *) 0);
+		name = appendstr (name, " -q", nullptr);
 
 	/* iconv_open may not work correctly in setuid processes; in GNU
 	 * libc, gconv modules may be linked against other gconv modules and
@@ -129,23 +129,23 @@ void add_manconv (pipeline *p,
 		const char *from_code;
 		char *sources = NULL;
 
-		cmd = pipecmd_new_args (MANCONV, "-f", (void *) 0);
+		cmd = pipecmd_new_args (MANCONV, "-f", nullptr);
 		GL_LIST_FOREACH (from, from_code) {
-			sources = appendstr (sources, from_code, (void *) 0);
+			sources = appendstr (sources, from_code, nullptr);
 			if (gl_list_next_node (from, from_node))
-				sources = appendstr (sources, ":", (void *) 0);
+				sources = appendstr (sources, ":", nullptr);
 		}
 		pipecmd_arg (cmd, sources);
 		free (sources);
-		pipecmd_args (cmd, "-t", codes->to, (void *) 0);
+		pipecmd_args (cmd, "-t", codes->to, nullptr);
 		if (quiet >= 2)
 			pipecmd_arg (cmd, "-q");
 		pipecmd_pre_exec (cmd, manconv_pre_exec, sandbox_free,
-				  sandbox);
+		                  sandbox);
 		free_manconv_codes (codes);
 	} else {
 		cmd = pipecmd_new_function (name, &manconv_stdin,
-					    &free_manconv_codes, codes);
+		                            &free_manconv_codes, codes);
 		pipecmd_pre_exec (cmd, sandbox_load, sandbox_free, sandbox);
 	}
 	free (name);
@@ -160,9 +160,8 @@ void add_manconv (pipeline *p,
  *
  * Returns zero on success or non-zero on failure.
  */
-int manconv_inprocess (decompress *d,
-		       const char *source_encoding,
-		       const char *target_encoding)
+int manconv_inprocess (decompress *d, const char *source_encoding,
+                       const char *target_encoding)
 {
 	gl_list_t from;
 	char *to;
@@ -186,7 +185,7 @@ int manconv_inprocess (decompress *d,
 			 * encodings are different.)
 			 */
 			if (utf8_validate_len (decompress_inprocess_buf (d),
-					       decompress_inprocess_len (d)))
+			                       decompress_inprocess_len (d)))
 				goto out;
 		} else
 			gl_list_add_last (from, xstrdup ("UTF-8"));
