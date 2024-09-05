@@ -1,5 +1,5 @@
-man-db 2.13.0
-=============
+man-db 2.13.0 (29 August 2024)
+==============================
 
 Compatibility notes:
 
@@ -9,10 +9,14 @@ Fixes:
 
  * Fix `man-suffixed-extension` test failure when not using the GNU
    hierarchy organization.
+ * Fix `-Wmissing-variable-declarations` warnings with GCC 14.
+ * Fix `-Wflex-array-member-not-at-end` warning with GCC 14.
 
 Improvements:
 
  * Upgrade to Gnulib `stable-202407`.
+ * Support running the test suite against an installed package; this is
+   useful for systems such as Debian's autopkgtest framework.
 
 man-db 2.12.1 (5 April 2024)
 ============================
