@@ -200,7 +200,7 @@ from section
 (This is an alternative spelling of
 "\fB%man%\fR \fI7 man\fR".)
 .TP
-\fB%man% '\fIman\fR(\fI7\fR)'
+\fB%man% '\fIman\fR(\fI7\fR)\fB'
 Display the manual page for macro package
 .I man
 from section
@@ -866,7 +866,8 @@ device.
 .  ds softhyphen \(hy
 .TS
 tab (@);
-l c c c.
+l l l l
+l c c c .
 Description@Octal@latin1@ascii
 _
 continuation hyphen@255@\*[softhyphen]@-
@@ -991,7 +992,7 @@ Examples (as of groff 1.23.0) include
 .BR pdf ,
 .BR ps ,
 .BR utf8 ,
-.BR X75
+.B X75
 and
 .BR X100 .
 .TP
@@ -1094,7 +1095,7 @@ it adds the contents of
 to the formatter's command line.
 
 For example,
-.B MANROFFOPT=-P-i
+.B MANROFFOPT=\-P\-i
 tells the formatter to use italic text (which is only supported by some
 terminals) rather than underlined text.
 .TP
@@ -1310,6 +1311,6 @@ help of all the community.
 31st March 2001 \(en present day: Colin Watson <cjwatson@debian.org> is now
 developing and maintaining man-db.
 .SH BUGS
-.if !'po4a'hide' https://gitlab.com/man-db/man-db/-/issues
+.if !'po4a'hide' https://gitlab.com/man-db/man-db/\-/issues
 .br
-.if !'po4a'hide' https://savannah.nongnu.org/bugs/?group=man-db
+.if !'po4a'hide' https://savannah.nongnu.org/bugs/?group=man\-db
