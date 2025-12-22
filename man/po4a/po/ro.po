@@ -20,6 +20,7 @@
 # Actualizare a traducerii pentru versiunea 2.12.0-pre2, făcută de R-GC, aug-2023.
 # Actualizare a traducerii pentru versiunea 2.12.1-pre1, făcută de R-GC, mar-2024.
 # Actualizare a traducerii pentru versiunea 2.13.1-pre1, făcută de R-GC, apr-2025.
+# Mici corecții/modificări pentru versiunea 2.13.1-pre1, făcută de R-GC, dec-2025.
 # Actualizare a traducerii pentru versiunea Y, făcută de X, Z(luna-anul).
 #
 msgid ""
@@ -27,7 +28,7 @@ msgstr ""
 "Project-Id-Version: man-db-manpages-2.13.1-pre1\n"
 "Report-Msgid-Bugs-To: Colin Watson <cjwatson@debian.org>\n"
 "POT-Creation-Date: 2025-04-21 18:50+0100\n"
-"PO-Revision-Date: 2025-04-23 00:15+0200\n"
+"PO-Revision-Date: 2025-12-21 10:36+0100\n"
 "Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>\n"
 "Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
 "Language: ro\n"
@@ -37,7 +38,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # R-GC, scrie:
@@ -1120,7 +1121,7 @@ msgid ""
 "B<ENVIRONMENT>, B<FILES>, B<VERSIONS>, B<STANDARDS>, B<NOTES>, B<BUGS>, "
 "B<EXAMPLE>, B<AUTHORS>, and B<SEE\\ ALSO>."
 msgstr ""
-"Numele convenționale includ B<NUME>, B<REZUMAT>, B<CONFIGURARE>, "
+"Numele convenționale includ B<NUME>, B<SINOPSIS>, B<CONFIGURARE>, "
 "B<DESCRIERE>, B<OPȚIUNI>, B<STARE\\ IEȘIRE>, B<VALOARE\\ REVENIRE>, "
 "B<ERORI>, B<MEDIU\\ DE\\ LUCRU>, B<FIȘIERE>, B<VERSIUNI>, B<STANDARDE>, "
 "B<NOTE>, B<DEFECTE>, B<EXEMPLE>, B<AUTORI>, și B<CONSULTAȚI\\ DEASEMENEA>."
@@ -1228,7 +1229,7 @@ msgstr ""
 "Explicarea ilustrată a comenzii sau a funcției este un model care ar trebui "
 "să se potrivească cu toate invocările posibile. În unele cazuri, este "
 "recomandabil să se ilustreze(explice) mai multe invocări exclusive, așa cum "
-"este arătat în secțiunea B<REZUMAT> a acestei pagini de manual."
+"este arătat în secțiunea B<SINOPSIS> a acestei pagini de manual."
 
 #. type: TP
 #: ../../man/man1/man.man1:188
@@ -2085,7 +2086,7 @@ msgstr ""
 #. type: Plain text
 #: ../../man/man1/man.man1:782
 msgid "B< Manual page>I< name>B<(>I<sec>B<) line>I< x>"
-msgstr "B< Pagina de manual>I< nume>B<(>I<secțiune>B<)>B< linia>I<\\ x>"
+msgstr "B< Pagina de manual>I< nume>B<(>I<secțiune>B<)>B< linia>I< x>"
 
 #. The default options are
 #. .BR \-six8 .
