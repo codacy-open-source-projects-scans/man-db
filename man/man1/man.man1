@@ -985,7 +985,11 @@ This option is used to change
 .BR troff's )
 output to be suitable for a device other than the default.
 It implies
-.BR \-t .
+.BR \-t ,
+unless the device is an
+.B nroff
+device such as
+.BR ascii ", " latin1 ", or " utf8.
 Examples (as of groff 1.23.0) include
 .BR dvi ,
 .BR latin1 ,

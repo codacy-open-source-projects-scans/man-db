@@ -1,3 +1,11 @@
+man-db 2.13.2
+=============
+
+Fixes:
+
+ * `man -T` no longer implies `-t` if the given device is suitable for use
+   with `nroff`.
+
 man-db 2.13.1 (2 May 2025)
 ==========================
 

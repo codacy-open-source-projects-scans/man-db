@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
     -   id: check-added-large-files
     -   id: check-yaml
@@ -13,12 +13,12 @@ repos:
         exclude: ^(ChangeLog-2013|patches/.*)$
         args: [--chars, " \t\n\r\v"]
 -   repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: v20.1.4
+    rev: v21.1.8
     hooks:
     -   id: clang-format
         exclude: ^lib/mp\.h$
 -   repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.10.0.1
+    rev: v0.11.0.1
     hooks:
     -   id: shellcheck
         exclude: ^bootstrap$

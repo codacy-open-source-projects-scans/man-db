@@ -230,31 +230,32 @@ struct device_entry {
 	const char *roff_device;
 	const char *roff_encoding;
 	const char *output_encoding;
+	bool is_nroff;
 };
 
 static struct device_entry device_table[] = {
         /* nroff devices */
-        {"ascii",   "ANSI_X3.4-1968", "ANSI_X3.4-1968"},
-        {"latin1",  "ISO-8859-1",     "ISO-8859-1"    },
-        {"utf8",    "ISO-8859-1",     "UTF-8"         },
+        {"ascii",   "ANSI_X3.4-1968", "ANSI_X3.4-1968", true },
+        {"latin1",  "ISO-8859-1",     "ISO-8859-1",     true },
+        {"utf8",    "ISO-8859-1",     "UTF-8",          true },
 
 #ifdef HEIRLOOM_NROFF
         /* Not strictly accurate, but we only use this in UTF-8 locales. */
-        {"locale",  "UTF-8",          "UTF-8"         },
+        {"locale",  "UTF-8",          "UTF-8",          true },
 #endif  /* HEIRLOOM_NROFF */
 
         /* troff devices */
-        {"X75",     NULL,             NULL            },
-        {"X75-12",  NULL,             NULL            },
-        {"X100",    NULL,             NULL            },
-        {"X100-12", NULL,             NULL            },
-        {"dvi",     NULL,             NULL            },
-        {"html",    NULL,             NULL            },
-        {"lbp",     NULL,             NULL            },
-        {"lj4",     NULL,             NULL            },
-        {"ps",      NULL,             NULL            },
+        {"X75",     NULL,             NULL,             false},
+        {"X75-12",  NULL,             NULL,             false},
+        {"X100",    NULL,             NULL,             false},
+        {"X100-12", NULL,             NULL,             false},
+        {"dvi",     NULL,             NULL,             false},
+        {"html",    NULL,             NULL,             false},
+        {"lbp",     NULL,             NULL,             false},
+        {"lj4",     NULL,             NULL,             false},
+        {"ps",      NULL,             NULL,             false},
 
-        {NULL,      NULL,             NULL            }
+        {NULL,      NULL,             NULL,             false}
 };
 
 static const char fallback_roff_encoding[] = "ISO-8859-1";
@@ -626,6 +627,19 @@ bool ATTRIBUTE_PURE is_roff_device (const char *device)
 
 	for (entry = device_table; entry->roff_device; ++entry) {
 		if (STREQ (entry->roff_device, device))
+			return true;
+	}
+
+	return false;
+}
+
+/* Is this a known nroff device name? */
+bool ATTRIBUTE_PURE is_nroff_device (const char *device)
+{
+	const struct device_entry *entry;
+
+	for (entry = device_table; entry->roff_device; ++entry) {
+		if (STREQ (entry->roff_device, device) && entry->is_nroff)
 			return true;
 	}
 

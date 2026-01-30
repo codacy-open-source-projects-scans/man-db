@@ -521,11 +521,11 @@ static error_t parse_opt (int key, char *arg, struct argp_state *state)
 			return 0;
 		case 'T':
 			/* Traditional nroff knows -T; troff does not (gets
-			 * ignored). All incarnations of groff know it. Why
-			 * does -T imply -t?
+			 * ignored). All incarnations of groff know it.
 			 */
 			roff_device = (arg ? arg : "ps");
-			troff = true;
+			if (!is_nroff_device (roff_device))
+				troff = true;
 			return 0;
 		case 'H':
 #  ifdef TROFF_IS_GROFF
