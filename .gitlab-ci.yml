@@ -1,5 +1,5 @@
 default:
-  image: debian:unstable
+  image: debian:testing
 
 variables:
   GIT_DEPTH: 0
@@ -17,7 +17,7 @@ pre-commit:
     XDG_CACHE_HOME: "$CI_PROJECT_DIR/.cache"
   before_script:
     - apt -qq update
-    - apt -y -qq install git pre-commit
+    - apt -y -qq install git pre-commit libperl-critic-perl
   script:
     - pre-commit run -a
   cache:
