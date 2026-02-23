@@ -1,14 +1,14 @@
 # Swedish messages for man-db-manpages.
-# Copyright © 2015, 2016, 2018, 2019, 2022, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024 Free Software Foundation, Inc.
+# Copyright © 2015, 2016, 2018, 2019, 2022, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2023, 2024, 2026 Free Software Foundation, Inc.
 # This file is distributed under the same license as the man-db package.
 # Luna Jernberg <droidbittin@gmail.com>, 2023.
-# Sebastian Rasmussen <sebras@gmail.com>, 2015, 2016, 2018, 2019, 2022, 2024
+# Sebastian Rasmussen <sebras@gmail.com>, 2015, 2016, 2018, 2019, 2022, 2024, 2026.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: man-db-manpages-2.12.0-pre2\n"
+"Project-Id-Version: man-db-manpages-2.13.1-pre1\n"
 "POT-Creation-Date: 2025-04-21 18:50+0100\n"
-"PO-Revision-Date: 2024-01-17 11:42+0100\n"
+"PO-Revision-Date: 2026-02-22 17:17+0800\n"
 "Last-Translator: Sebastian Rasmussen <sebras@gmail.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -1094,10 +1094,9 @@ msgstr ""
 
 #. type: TP
 #: ../../man/man1/man.man1:202
-#, fuzzy, no-wrap
-#| msgid "B<%man% '>I<man>(I<7>)'"
+#, no-wrap
 msgid "B<%man% '>I<man>(I<7>)B<'>"
-msgstr "B<%man% '>I<man>(|I<7>)'"
+msgstr "B<%man% '>I<man>(|I<7>)B<'>"
 
 #. type: Plain text
 #: ../../man/man1/man.man1:214
@@ -2175,12 +2174,6 @@ msgstr "B<-T>[I<enhet\\/>], B<--troff-device>[=I<enhet\\/>]"
 
 #. type: Plain text
 #: ../../man/man1/man.man1:998
-#, fuzzy
-#| msgid ""
-#| "This option is used to change B<groff> (or possibly B<troff's>)  output "
-#| "to be suitable for a device other than the default.  It implies B<-t>.  "
-#| "Examples (provided with Groff-1.17) include B<dvi>, B<latin1>, B<ps>, "
-#| "B<utf8>, B<X75> and B<X100>."
 msgid ""
 "This option is used to change B<groff> (or possibly B<troff's>)  output to "
 "be suitable for a device other than the default.  It implies B<-t>.  "
@@ -2189,8 +2182,8 @@ msgid ""
 msgstr ""
 "Denna flagga används för att ändra B<groff>:s (eller möjligtvis B<troff>:s) "
 "utmatning för att vara lämplig för en enhet annan än standardenheten.  Den "
-"implicerar B<-t>.  Exempel (som tillhandahålls av Groff-1.17) inkluderar "
-"B<dvi>, B<latin1>, B<ps>, B<utf8>, B<X75> och B<X100>."
+"implicerar B<-t>.  Exempel (fr.o.m. groff 1.23.0) inkluderar B<dvi>, "
+"B<latin1>, B<ps>, B<utf8>, B<X75> och B<X100>."
 
 #. type: TP
 #: ../../man/man1/man.man1:998
@@ -2293,6 +2286,9 @@ msgid ""
 "For example, B<MANROFFOPT=-P-i> tells the formatter to use italic text "
 "(which is only supported by some terminals) rather than underlined text."
 msgstr ""
+"Till exempel berättar B<MANROFFOPT=-P-i> för formateraren att den ska "
+"använda kursiv text (vilket endast stöds av vissa terminaler) snarare än "
+"understruken text."
 
 #. type: Plain text
 #: ../../man/man1/man.man1:1108
@@ -3069,19 +3065,6 @@ msgstr ""
 
 #. type: Plain text
 #: ../../man/man5/manpath.man5:73
-#, fuzzy
-#| msgid ""
-#| "Finally, if the B<--systems> option is used or the $B<SYSTEM> environment "
-#| "variable is set, then that should consist of a sequence of operating "
-#| "system names separated by commas or colons.  This acts as a template, "
-#| "expanding the search path once more to allow access to other operating "
-#| "systems' manual pages: for each system name, man-db looks for that name "
-#| "as a subdirectory of each entry in the search path, and adds it to the "
-#| "final search path if it exists.  A system name of B<man> inserts the "
-#| "normal search path without subdirectories.  For example, if the search "
-#| "path would otherwise have been I</usr/share/man:/usr/local/man>, and "
-#| "$B<SYSTEM> is set to I<newOS:man>, then the final search path will be I</"
-#| "usr/share/man/newOS:/usr/share/man:/usr/local/man/newOS:/usr/local/man>."
 msgid ""
 "Finally, if the B<--systems> option is used or the $B<SYSTEM> environment "
 "variable is set, then that should consist of a sequence of operating system "
@@ -3105,7 +3088,7 @@ msgstr ""
 "normala sökvägen utan underkataloger.  Om till exempel sökvägen annars hade "
 "varit I</usr/share/man:/usr/local/man> och $B<SYSTEM> är satt till "
 "I<nyttOS:man>, då kommer den slutgiltiga sökvägen att vara I</usr/share/man/"
-"nyttOS:/usr/share/man:/usr/local/man/nyttwOS:/usr/local/man>."
+"nyttOS:\\:/usr/share/man:\\:/usr/local/man/nyttwOS:\\:/usr/local/man>."
 
 #. type: Plain text
 #: ../../man/man5/manpath.man5:83
@@ -3323,13 +3306,6 @@ msgstr ""
 
 #. type: Plain text
 #: ../../man/man5/manpath.man5:209
-#, fuzzy
-#| msgid ""
-#| "If a particular extension is not in this list (say, 1mh) it will be "
-#| "displayed with the rest of the section it belongs to.  The effect of this "
-#| "is that you only need to explicitly list extensions if you want to force "
-#| "a particular order.  Sections with extensions should usually be adjacent "
-#| "to their main section (e.g. \"1 1mh 8 ...\")."
 msgid ""
 "If a particular extension is not in this list (say, 1mh) it will be "
 "displayed with the rest of the section it belongs to.  The effect of this is "
@@ -3341,7 +3317,7 @@ msgstr ""
 "visas med resten av avsnittet som den hör till.  Effekten av detta är att du "
 "bara behöver att uttryckligen lista ändelser om du vill tvinga fram en "
 "särskild ordning.  Avsnitt med ändelser bör vanligtvis finnas intill deras "
-"huvudavsnitt (t.ex. ”1 1mh 8...”)."
+"huvudavsnitt (t.ex.\\& ”1 1mh 8...”)."
 
 #. type: Plain text
 #: ../../man/man5/manpath.man5:212
